@@ -14,7 +14,10 @@
             width: 100%;
             font-size: large;
             font-family: sans-serif;
-            z-index: 2; }
+            z-index: 2;
+            /* pointer-events: none; needed to let click events pass through to lower layer */
+            pointer-events: none;
+        }
         canvas {
             -moz-user-select: none;
             -webkit-user-select: none;
@@ -23,6 +26,8 @@
             z-index: 1;
         }
         .selectbox {
+            /* pointer-events: none; needed to let click events pass through to lower layer */
+            pointer-events: all;
             margin: 5px 0px 0px;
         }
         select {
@@ -77,7 +82,7 @@
         </div>
     </div>
 </div>
-<script src="dest/bundle.min.js"></script>
+<script src="dist/bundle.js"></script>
 
 </body>
 
