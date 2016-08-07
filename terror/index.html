@@ -31,7 +31,14 @@
             margin: 5px 0px 0px;
         }
         select {
-            font-size: large;
+            font-size: larger;
+        }
+        .datalink {
+            position:fixed;
+            font-size: small;
+            left: 5px;
+            bottom: 5px;
+            pointer-events: all;
         }
     </style>
 </head>
@@ -44,7 +51,7 @@
     <div class="graphoverlay">
         <div style="float:left">
             <div class="selectbox">
-            <label for="select_year">Year:</label>
+            <!--label for="select_year">Year:</label-->
             <select title="Year of terror" id="select_year">
                 <option value="2001">2001</option>
                 <option value="2002">2002</option>
@@ -63,11 +70,7 @@
                 <option value="2015">2015</option>
                 <option value="2016" selected="selected">2016</option>
             </select>
-            </div>
-
-
-            <div class="selectbox">
-                <label for="select_year">Month:</label>
+                <!--label for="select_year">Month:</label-->
                 <select title="Month" id="select_month">
                     <option value="all" selected="selected">All</option>
                 </select>
@@ -79,6 +82,9 @@
             <select title="Country" id="select_country">
                 <option value="all" selected="selected">all</option>
             </select>
+        </div>
+        <div class="datalink"">
+        Data source:<a href="http://www.thereligionofpeace.com/">thereligionofpeace.com</a>
         </div>
     </div>
 </div>
