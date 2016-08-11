@@ -35,6 +35,7 @@
         }
         .datalink {
             position:fixed;
+            font-family: monospace;
             font-size: small;
             left: 5px;
             bottom: 5px;
@@ -51,6 +52,18 @@
 </head>
 
 <body>
+<!-- START Facebook like -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- END Facebook like -->
+
+
 <div class="graphcontainer">
     <div id="container">
         <canvas id="canvas"></canvas>
@@ -90,13 +103,13 @@
                 <option value="all" selected="selected">all</option>
             </select>
         </div>
-        <div class="datalink"">
-        Data source:<a href="http://www.thereligionofpeace.com/">thereligionofpeace.com</a>
-        &amp; <a href="https://en.wikipedia.org/wiki/List_of_non-state_terrorist_incidents#1970.E2.80.93present/">Wikipedia</a>
+        <div class="datalink">
+        [Sources:<a href="http://www.thereligionofpeace.com/">thereligionofpeace.com</a>
+        &amp; <a href="https://en.wikipedia.org/wiki/List_of_non-state_terrorist_incidents#1970.E2.80.93present/">Wikipedia</a>] [email:aulawabbel at gmail.com]
 
         </div>
         <div class="about"">
-            Contact: aulawabbel at gmail.com
+        <div style="margin-left: 20px;" class="fb-like" data-href="https://aulawabbel.github.io/terror/" data-width="100" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
         </div>
     </div>
 </div>
