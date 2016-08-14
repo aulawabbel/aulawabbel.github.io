@@ -3,74 +3,27 @@
 
 <head>
     <title>Global Terror Graph</title>
-    <style>
-        .graphcontainer {
-            position: relative;
-            margin: 0px auto;
-            width: 97%;
-        }
-        .graphoverlay {
-            position: absolute;
-            width: 100%;
-            font-size: large;
-            font-family: sans-serif;
-            z-index: 2;
-            /* pointer-events: none; needed to let click events pass through to lower layer */
-            pointer-events: none;
-        }
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            position: absolute;
-            z-index: 1;
-        }
-        .selectbox {
-            /* pointer-events: none; needed to let click events pass through to lower layer */
-            pointer-events: all;
-            margin: 5px 0px 0px;
-        }
-        select {
-            font-size: larger;
-        }
-        .datalink {
-            position:fixed;
-            font-family: monospace;
-            font-size: small;
-            left: 5px;
-            bottom: 5px;
-            pointer-events: all;
-        }
-        .about {
-            position:fixed;
-            font-size: small;
-            right: 5px;
-            bottom: 5px;
-            pointer-events: all;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="app.css">
 </head>
 
 <body>
 <!-- START Facebook like -->
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
+    js = d.createElement(s);
+    js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <!-- END Facebook like -->
 
-
 <div class="graphcontainer">
-    <div id="container">
-        <canvas id="canvas"></canvas>
-    </div>
-    <div class="graphoverlay">
-        <div style="float:left">
-            <div class="selectbox">
+        <div id="container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="header">
             <!--label for="select_year">Year:</label-->
             <select title="Year of terror" id="select_year">
                 <option value="2001">2001</option>
@@ -90,38 +43,51 @@
                 <option value="2015">2015</option>
                 <option value="2016" selected="selected">2016</option>
             </select>
-                <!--label for="select_year">Month:</label-->
-                <select title="Month" id="select_month">
-                    <option value="all" selected="selected">All</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="selectbox" style="float: right">
-            <label for="select_country">Country:</label>
-            <select title="Country" id="select_country" style="max-width: 150px;">
-                <option value="all" selected="selected">all</option>
+            <!--label for="select_year">Month:</label-->
+            <select title="Month" id="select_month">
+                <option value="all" selected="selected">All</option>
             </select>
+            <div id="countrybox">
+            <!--label for="select_country">Country:</label-->
+            <select title="Country" id="select_country">
+                <option value="all" selected="selected">All</option>
+            </select>
+
+            </div>
+            <div>
+
+            </div>
         </div>
-        <div class="datalink">
-            [<a href="https://github.com/aulawabbel/terror#terror">More information</a>]
+
+        <div class="footer">
+            <div class="fb-like" data-href="https://aulawabbel.github.io/terror/" data-width="100"
+                 data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
+            <div class="statistics"></div>
+            <div class="about">[<a href="https://github.com/aulawabbel/terror#terror">About</a>]</div>
         </div>
-        <div class="about"">
-        <div style="margin-left: 20px;" class="fb-like" data-href="https://aulawabbel.github.io/terror/" data-width="100" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
-        </div>
-    </div>
+
 </div>
 <script src="dist/bundle.js"></script>
+
+<!-- START Analytics -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-82125333-1', 'auto');
     ga('send', 'pageview');
 
 </script>
+<!-- END Analytics -->
 </body>
 
 </html>
